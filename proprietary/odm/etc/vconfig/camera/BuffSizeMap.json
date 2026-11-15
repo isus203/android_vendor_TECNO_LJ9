@@ -1,0 +1,21 @@
+{
+    "BuffSizeMap": [
+        {
+            "graphName": "LJ9_BackZoomCapture",
+            "SizeMap": [
+                {
+                    "srcWidth": 4096,
+                    "srcHeight": 3072,
+                    "dstWidth": 4096,
+                    "dstHeight": 3072
+                },
+                {
+                    "srcWidth": 3264,
+                    "srcHeight": 2448,
+                    "dstWidth": 4096,
+                    "dstHeight": 3072
+                }
+            ]
+        }
+    ]
+}

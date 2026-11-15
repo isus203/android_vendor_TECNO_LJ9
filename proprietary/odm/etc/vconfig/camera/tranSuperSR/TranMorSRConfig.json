@@ -1,0 +1,16 @@
+{
+  "defaultId": 10,
+  "iszZoomValue": 100,
+  "sensorConfig": [
+    {
+      "id": "0",
+      "cameraId": 10,
+      "applyZoom": true
+    },
+    {
+      "id": "3",
+      "cameraId": 11,
+      "applyZoom": false
+    }
+  ]
+}

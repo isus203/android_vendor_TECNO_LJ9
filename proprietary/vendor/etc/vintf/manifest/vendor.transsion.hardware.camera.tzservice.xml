@@ -1,0 +1,12 @@
+<!-- ITD: add TZService Support by bingfeng.li 20250507 start -->
+<manifest version="1.0" type="device">
+    <hal format="aidl">
+        <name>vendor.transsion.hardware.camera.tzservice</name>
+        <version>1</version>
+        <interface>
+             <name>ITZService</name>
+             <instance>default</instance>
+        </interface>
+    </hal>
+</manifest>
+<!-- ITD: add TZService Support by bingfeng.li 20250507 end -->

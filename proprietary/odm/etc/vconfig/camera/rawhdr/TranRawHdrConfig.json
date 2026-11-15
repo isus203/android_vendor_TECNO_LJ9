@@ -1,0 +1,31 @@
+{
+    "sensorNumber": 6,
+    "iszParam": true,
+    "sensorName": [],
+    "RawHDR_Config_Threshold": [
+      [64, 8],
+      [16, 6],
+      [16, 6.25],
+      [32, 16],
+      [32, 16],
+      [16, 16]
+    ],
+    "RawHDR_Config_Threshold1": [
+      [64, 8],
+      [16, 6],
+      [64, 8],
+      [32, 16],
+      [32, 16],
+      [16, 16]
+    ],
+    "gIsUseTranBinSum": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ]
+}
+
+  

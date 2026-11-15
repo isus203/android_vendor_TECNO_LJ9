@@ -1,0 +1,75 @@
+{
+    "Sensors": [
+        {
+            "Name": "S5KHM6SX_MIPI_RAW",
+            "Capture Size": {
+                "4:3": [
+                    "3968x2976"
+                ],
+                "16:9": [
+                    "3328x1872"
+                ]
+            },
+            "IMGOYUV Size": {
+                "4:3": "3968x2976",
+                "16:9": "3328x1872"
+            },
+            "RRZOYUV Size": {
+                "4:3": "1440x1080",
+                "16:9": "1280x720"
+            },
+            "SensorScenarioRecording": {
+                "Zoom" : "Video"
+            },
+            "SensorScenarioZSD": {
+                "3rdParty": "Custom1",
+                "Zoom": "Preview"
+            }
+        },
+        {
+            "Name": "GC08A8WIDE_MIPI_RAW",
+            "Capture Size": {
+                "4:3": [
+                    "1600x1200"
+                ],
+                "16:9": [
+                    "1600x900"
+                ]
+            },
+            "IMGOYUV Size": {
+                "4:3": "1600x1200",
+                "16:9": "1600x900"
+            },
+            "RRZOYUV Size": {
+                "4:3": "1440x1080",
+                "16:9": "1280x720"
+            },
+            "SensorScenarioRecording": {
+                "Zoom": "Video"
+            },
+            "SensorScenarioZSD": {
+                "3rdParty": "Custom1",
+                "Zoom": "Capture"
+            }
+        }
+    ],
+    "Sensor Combinations": [
+        {
+            "Logical Device": {
+                "Name": "satcam",
+                "Features": ["Zoom"]
+            },
+            "Sensors": ["S5KHM6SX_MIPI_RAW", "GC08A8WIDE_MIPI_RAW"],
+            "Exclusives": [[]],
+            "Zoom Range": [0.6, 15],
+            "Zoom Steps": [0.6, 1]
+        }
+    ],
+    "Depth Delay": 0,
+    "Enable Record": 1,
+    "Callback Buffer List": {
+        "//": ["ci: Clean Image, bi: Bokeh Image, mbd: MTK Bokeh Depth, mdb: MTK Debug Buffer, mbm: MTK Bokeh Metadata",
+           "Value must <= 91 bytes"],
+        "Value": "bi"
+    }
+}

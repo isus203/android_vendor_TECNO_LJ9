@@ -1,0 +1,6 @@
+{
+  "TRAN_SAT_ROLE_WIDE_MAIN": 1,
+  "TRAN_SAT_ROLE_MAIN_TELE": 0,
+  "TRAN_SAT_ROLE_MAIN_PERISCOPE": 0,
+  "Fusion_LV_Threshold": [20, 20, 20]
+}

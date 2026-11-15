@@ -1,0 +1,1505 @@
+{
+    "graphName": "LJ9_BackZoomCapture",
+    "jsonTimeStamp": "20251208",
+    "zslType": "tz",
+    "isSupportQuickProc": 1,
+    "isSupportDefer": 1,
+    "isSupportStackOrderProcess": 1,
+    "isSupportRawCacheInStorage": 0,
+    "nodes": [
+        {
+            "algoName": "RawConvert",
+            "nodeName": "RawConvert0",
+            "nodeType": "Sequence",
+            "outputType": "oneToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BAYER10_UNPAK",
+                        "eImgFmt_BAYER10"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BAYER10_UNPAK",
+                        "eImgFmt_BAYER10"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "YuvConvert",
+            "nodeName": "YuvConvert0",
+            "nodeType": "Sequence",
+            "outputType": "oneToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "formats": [
+                        "eImgFmt_NV21",
+                        "eImgFmt_YUV_P010"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "formats": [
+                        "eImgFmt_YUV_P010",
+                        "eImgFmt_NV12",
+                        "eImgFmt_NV21"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "YuvConvert",
+            "nodeName": "PostviewConvert0",
+            "nodeType": "Sequence",
+            "outputType": "oneToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "formats": [
+                        "eImgFmt_NV21",
+                        "eImgFmt_NV12"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "formats": [
+                        "eImgFmt_NV21",
+                        "eImgFmt_NV12"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "MfnrBss",
+            "nodeName": "MfnrBss0",
+            "nodeType": "Sequence",
+            "outputType": "multiToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BAYER10_MIPI",
+                        "eImgFmt_BAYER10"
+                    ]
+                },
+                {
+                    "portId": 1,
+                    "portName": "fullrawsub",
+                    "formats": [
+                        "eImgFmt_BAYER10_MIPI",
+                        "eImgFmt_BAYER10"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "sizeRefInputPort": 0,
+                    "formats": [
+                        "eImgFmt_BAYER10_MIPI",
+                        "eImgFmt_BAYER10"
+                    ]
+                },
+                {
+                    "portId": 1,
+                    "portName": "fullrawsub",
+                    "sizeRefInputPort": 1,
+                    "formats": [
+                        "eImgFmt_BAYER10_MIPI",
+                        "eImgFmt_BAYER10"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "Mfnr",
+            "nodeName": "Mfnr0",
+            "nodeType": "Sequence",
+            "outputType": "multiToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "isMaster": 1,
+                    "isframeCountBase": 1,
+                    "formats": [
+                        "eImgFmt_BLOB",
+                        "eImgFmt_BAYER10",
+                        "eImgFmt_BAYER10_MIPI",
+                        "eImgFmt_BAYER10_UNPAK"
+                    ]
+                },
+                {
+                    "portId": 1,
+                    "portName": "fullrawsub",
+                    "isMaster": 0,
+                    "isframeCountBase": 0,
+                    "formats": [
+                        "eImgFmt_BLOB",
+                        "eImgFmt_BAYER10",
+                        "eImgFmt_BAYER10_MIPI",
+                        "eImgFmt_BAYER10_UNPAK"
+                    ]
+                },
+                {
+                    "portId": 2,
+                    "portName": "yuvr1",
+                    "isMaster": 1,
+                    "isframeCountBase": 0,
+                    "formats": [
+                        "eImgFmt_NV21"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "isMaster": 1,
+                    "sizeRefInputPort": 0,
+                    "isframeCountBase": 1,
+                    "formats": [
+                        "eImgFmt_NV12",
+                        "eImgFmt_NV21"
+                    ]
+                },
+                {
+                    "portId": 1,
+                    "portName": "fullraw",
+                    "isMaster": 1,
+                    "sizeRefInputPort": 0,
+                    "isframeCountBase": 0,
+                    "formats": [
+                        "eImgFmt_BAYER10",
+                        "eImgFmt_BAYER10_MIPI"
+                    ]
+                },
+                {
+                    "portId": 2,
+                    "portName": "fullrawsub",
+                    "isMaster": 0,
+                    "sizeRefInputPort": 1,
+                    "isframeCountBase": 0,
+                    "formats": [
+                        "eImgFmt_BAYER10",
+                        "eImgFmt_BAYER10_MIPI"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "TranStRawSr",
+            "nodeName": "TranStRawSr0",
+            "nodeType": "Sequence",
+            "outputType": "multiToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BAYER10_UNPAK"
+                    ]
+                },
+                {
+                    "portId": 1,
+                    "portName": "bss",
+                    "formats": [
+                        "eImgFmt_BAYER10_MIPI",
+                        "eImgFmt_BAYER10"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BAYER10_UNPAK"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "RawHdr",
+            "nodeName": "RawHdr0",
+            "nodeType": "Sequence",
+            "outputType": "multiToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BAYER10_UNPAK"
+                    ]
+                },
+                {
+                    "portId": 1,
+                    "portName": "bss",
+                    "formats": [
+                        "eImgFmt_BAYER10_MIPI",
+                        "eImgFmt_BAYER10"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BAYER10_UNPAK"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "AncRawSuperNight",
+            "nodeName": "AncRawSuperNight0",
+            "nodeType": "Sequence",
+            "outputType": "multiToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BAYER10_UNPAK"
+                    ]
+                },
+                {
+                    "portId": 1,
+                    "portName": "bss",
+                    "formats": [
+                        "eImgFmt_BAYER10_MIPI",
+                        "eImgFmt_BAYER10"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BAYER12_UNPAK"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "Raw2Yuv",
+            "nodeName": "Raw2Yuv0",
+            "nodeType": "Sequence",
+            "outputType": "oneToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BLOB",
+                        "eImgFmt_BAYER10",
+                        "eImgFmt_BAYER10_MIPI",
+                        "eImgFmt_BAYER10_UNPAK"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "formats": [
+                        "eImgFmt_NV12",
+                        "eImgFmt_NV21",
+                        "eImgFmt_YUV_P010"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "Raw2Yuv",
+            "nodeName": "Raw2Yuv1",
+            "nodeType": "Sequence",
+            "outputType": "oneToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BLOB",
+                        "eImgFmt_BAYER10",
+                        "eImgFmt_BAYER10_MIPI",
+                        "eImgFmt_BAYER10_UNPAK"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "formats": [
+                        "eImgFmt_NV12",
+                        "eImgFmt_NV21",
+                        "eImgFmt_YUV_P010"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "Raw2Yuv",
+            "nodeName": "Raw2Yuv2",
+            "nodeType": "Sequence",
+            "outputType": "oneToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BLOB",
+                        "eImgFmt_BAYER10",
+                        "eImgFmt_BAYER10_MIPI",
+                        "eImgFmt_BAYER10_UNPAK"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "formats": [
+                        "eImgFmt_NV12",
+                        "eImgFmt_NV21",
+                        "eImgFmt_YUV_P010"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "Raw2Yuv",
+            "nodeName": "Raw2Yuv3",
+            "nodeType": "Sequence",
+            "outputType": "oneToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BLOB",
+                        "eImgFmt_BAYER10",
+                        "eImgFmt_BAYER10_MIPI",
+                        "eImgFmt_BAYER10_UNPAK"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "formats": [
+                        "eImgFmt_NV12",
+                        "eImgFmt_NV21",
+                        "eImgFmt_YUV_P010"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "RawConvert",
+            "nodeName": "Raw2Raw0",
+            "nodeType": "Sequence",
+            "outputType": "oneToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BAYER10",
+                        "eImgFmt_BAYER10_MIPI"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BAYER10_UNPAK"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "RawConvert",
+            "nodeName": "Raw2Raw1",
+            "nodeType": "Sequence",
+            "outputType": "oneToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BAYER10",
+                        "eImgFmt_BAYER10_MIPI"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BAYER10_UNPAK"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "PreviewSelector",
+            "nodeName": "PreviewSelector0",
+            "nodeType": "Sequence",
+            "outputType": "multiToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "formats": [
+                        "eImgFmt_NV21"
+                    ]
+                },
+                {
+                    "portId": 1,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BAYER10_MIPI",
+                        "eImgFmt_BAYER10"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "formats": [
+                        "eImgFmt_NV21"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "TranCaptureFilter",
+            "nodeName": "TranCaptureFilter1",
+            "nodeType": "Sequence",
+            "outputType": "oneToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "isframeCountBase": 1,
+                    "formats": [
+                        "eImgFmt_NV21"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "sizeRefInputPort": 0,
+                    "formats": [
+                        "eImgFmt_NV21"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "TranImageStyle",
+            "nodeName": "TranImageStyle1",
+            "nodeType": "Sequence",
+            "outputType": "oneToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "isframeCountBase": 1,
+                    "formats": [
+                        "eImgFmt_NV21"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "sizeRefInputPort": 0,
+                    "formats": [
+                        "eImgFmt_NV21"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "Yuv2Yuv",
+            "nodeName": "Yuv2Yuv0",
+            "nodeType": "Sequence",
+            "outputType": "oneToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "formats": [
+                        "eImgFmt_YUV_P012",
+                        "eImgFmt_YUV_P010",
+                        "eImgFmt_NV12"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "formats": [
+                        "eImgFmt_YUV_P010",
+                        "eImgFmt_NV12",
+                        "eImgFmt_NV12"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "Yuv2JpegLQ",
+            "nodeName": "Yuv2Jpeg1",
+            "nodeType": "Sequence",
+            "outputType": "oneToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "formats": [
+                        "eImgFmt_NV12",
+                        "eImgFmt_YUV_P010"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "jpeg",
+                    "isframeCountBase": 1,
+                    "formats": [
+                        "eImgFmt_BLOB"
+                    ]
+                },
+                {
+                    "portId": 1,
+                    "portName": "postview",
+                    "isframeCountBase": 0,
+                    "formats": [
+                        "eImgFmt_NV21"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "YuvAlgo2Jpeg",
+            "nodeName": "YuvAlgo2Jpeg0",
+            "nodeType": "Sequence",
+            "outputType": "oneToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "formats": [
+                        "eImgFmt_YUV_P012",
+                        "eImgFmt_YUV_P010",
+                        "eImgFmt_NV21",
+                        "eImgFmt_NV12"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "jpeg",
+                    "isframeCountBase": 1,
+                    "formats": [
+                        "eImgFmt_BLOB"
+                    ]
+                },
+                {
+                    "portId": 1,
+                    "portName": "postview",
+                    "isframeCountBase": 0,
+                    "formats": [
+                        "eImgFmt_NV21"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "YuvAlgo2Jpeg",
+            "nodeName": "YuvAlgo2Jpeg1",
+            "nodeType": "Sequence",
+            "outputType": "oneToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "formats": [
+                        "eImgFmt_YUV_P012",
+                        "eImgFmt_YUV_P010",
+                        "eImgFmt_NV21",
+                        "eImgFmt_NV12"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "jpeg",
+                    "isframeCountBase": 1,
+                    "formats": [
+                        "eImgFmt_BLOB"
+                    ]
+                },
+                {
+                    "portId": 1,
+                    "portName": "postview",
+                    "isframeCountBase": 0,
+                    "formats": [
+                        "eImgFmt_NV21"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "SatZoomFusion",
+            "nodeName": "SatZoomFusion0",
+            "nodeType": "Sequence",
+            "outputType": "oneToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "formats": [
+                        "eImgFmt_NV21"
+                    ]
+                },
+                {
+                    "portId": 1,
+                    "portName": "fullyuvsub",
+                    "formats": [
+                        "eImgFmt_NV21"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullyuv",
+                    "isframeCountBase": 1,
+                    "formats": [
+                        "eImgFmt_NV21"
+                    ]
+                }
+            ]
+        },
+        {
+            "algoName": "SampleBss",
+            "nodeName": "SampleBss0",
+            "nodeType": "Sequence",
+            "outputType": "multiToone",
+            "inputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BAYER10_MIPI",
+                        "eImgFmt_BAYER10"
+                    ]
+                }
+            ],
+            "outputPortInfos": [
+                {
+                    "portId": 0,
+                    "portName": "fullraw",
+                    "formats": [
+                        "eImgFmt_BAYER10_MIPI",
+                        "eImgFmt_BAYER10"
+                    ]
+                }
+            ]
+        }
+    ],
+    "sharePoolStreamIds": [
+        {
+            "poolclass": "RawShare",
+            "StreamIds": [
+                20000,
+                20002,
+                20003
+            ]
+        }
+    ],
+    "inputStreams": [
+        {
+            "nodeName": "PostviewConvert0",
+            "streamName": "HisPreview",
+            "streamType": "halstream",
+            "sensorId": -1,
+            "streamId": -1,
+            "srcbufPordId": 0
+        },
+        {
+            "nodeName": "Raw2Yuv0",
+            "streamName": "singleraw",
+            "streamType": "halstream",
+            "sensorId": 0,
+            "streamId": 20000,
+            "srcbufPordId": 1
+        },
+        {
+            "nodeName": "Raw2Yuv0",
+            "streamName": "singleraw",
+            "streamType": "halstream",
+            "sensorId": 2,
+            "streamId": 20002,
+            "srcbufPordId": 2
+        },
+        {
+            "nodeName": "Mfnr0",
+            "streamName": "multiraw",
+            "streamType": "halstream",
+            "sensorId": 0,
+            "streamId": 20000,
+            "srcbufPordId": 4
+        },
+        {
+            "nodeName": "Mfnr0",
+            "streamName": "multiraw",
+            "streamType": "halstream",
+            "sensorId": 2,
+            "streamId": 20002,
+            "srcbufPordId": 5
+        },
+        {
+            "nodeName": "Raw2Raw0",
+            "streamName": "multiraw",
+            "streamType": "halstream",
+            "sensorId": 0,
+            "streamId": 20000,
+            "srcbufPordId": 19
+        },
+        {
+            "nodeName": "Raw2Raw0",
+            "streamName": "multiraw",
+            "streamType": "halstream",
+            "sensorId": 2,
+            "streamId": 20002,
+            "srcbufPordId": 20
+        },
+        {
+            "nodeName": "MfnrBss0",
+            "streamName": "multiraw",
+            "streamType": "halstream",
+            "sensorId": 0,
+            "streamId": 20000,
+            "srcbufPordId": 27
+        },
+        {
+            "nodeName": "Raw2Yuv1",
+            "streamName": "singleraw",
+            "streamType": "halstream",
+            "sensorId": 0,
+            "streamId": 20000,
+            "srcbufPordId": 29
+        },
+        {
+            "nodeName": "Raw2Yuv2",
+            "streamName": "singleraw",
+            "streamType": "halstream",
+            "sensorId": 2,
+            "streamId": 20002,
+            "srcbufPordId": 28
+        },
+        {
+            "nodeName": "PreviewSelector0",
+            "streamName": "preview",
+            "streamType": "halstream",
+            "sensorId": -1,
+            "streamId": -1,
+            "srcbufPordId": 31
+        }
+    ],
+    "outputStreams": [
+        {
+            "nodeName": "PostviewConvert0",
+            "streamName": "postview",
+            "streamType": "appstream",
+            "sensorId": -1,
+            "streamId": -1,
+            "sinkbufPordId": 0
+        },
+        {
+            "nodeName": "YuvAlgo2Jpeg0",
+            "streamName": "jpeg",
+            "streamType": "appstream",
+            "sensorId": -1,
+            "streamId": -1,
+            "sinkbufPordId": 1
+        },
+        {
+            "nodeName": "Yuv2Jpeg1",
+            "streamName": "LQJpeg_fromyuv",
+            "streamType": "appstream",
+            "sensorId": -1,
+            "streamId": -1,
+            "sinkbufPordId": 4
+        },
+        {
+            "nodeName": "Yuv2Jpeg1",
+            "streamName": "LQpostview_fromyuv",
+            "streamType": "appstream",
+            "sensorId": -1,
+            "streamId": -1,
+            "sinkbufPordId": 5
+        }
+    ],
+    "links": [
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_NV21",
+            "srcQuickProcess": 1,
+            "dstNode": "PostviewConvert0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_NV21"
+        },
+        {
+            "srcNode": "PostviewConvert0",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_NV21",
+            "dstNode": "sinkbuffer",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_NV21",
+            "dstQuickProcess": 1
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 1,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "isDefer": 1,
+            "dstNode": "Raw2Yuv0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 1,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "dstNode": "PreviewSelector0",
+            "dstPortId": 1,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 2,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "isDefer": 1,
+            "dstNode": "Raw2Yuv0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 2,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "dstNode": "PreviewSelector0",
+            "dstPortId": 1,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 3,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "isDefer": 1,
+            "dstNode": "Raw2Yuv0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 3,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "dstNode": "PreviewSelector0",
+            "dstPortId": 1,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 28,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "isDefer": 1,
+            "dstNode": "Raw2Yuv2",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 28,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "dstNode": "PreviewSelector0",
+            "dstPortId": 1,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 29,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "isDefer": 1,
+            "dstNode": "Raw2Yuv1",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 4,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "dstNode": "MfnrBss0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 5,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "dstNode": "MfnrBss0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 6,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "dstNode": "MfnrBss0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 4,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "isDefer": 1,
+            "dstNode": "Mfnr0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 5,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "isDefer": 1,
+            "dstNode": "Mfnr0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 27,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "isDefer": 1,
+            "dstNode": "Mfnr0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 27,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "dstNode": "MfnrBss0",
+            "dstPortId": 1,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 19,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "isDefer": 1,
+            "dstNode": "Raw2Raw0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 20,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "isDefer": 1,
+            "dstNode": "Raw2Raw0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 30,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "isDefer": 1,
+            "dstNode": "Raw2Raw1",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 31,
+            "srcFormat": "eImgFmt_NV21",
+            "srcQuickProcess": 1,
+            "dstNode": "PreviewSelector0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_NV21"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 19,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "dstNode": "SampleBss0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "srcbuffer",
+            "srcPortId": 20,
+            "srcFormat": "eImgFmt_BAYER10",
+            "srcAllocFormat": "eImgFmt_BLOB",
+            "srcQuickProcess": 1,
+            "dstNode": "SampleBss0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "Raw2Raw0",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_BAYER10_UNPAK",
+            "dstNode": "TranStRawSr0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10_UNPAK"
+        },
+        {
+            "srcNode": "SampleBss0",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_BAYER10",
+            "dstNode": "TranStRawSr0",
+            "dstPortId": 1,
+            "isDefer": 1,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "TranStRawSr0",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_BAYER10_UNPAK",
+            "dstNode": "Raw2Yuv3",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10_UNPAK"
+        },
+        {
+            "srcNode": "Raw2Raw0",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_BAYER10_UNPAK",
+            "dstNode": "RawHdr0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10_UNPAK"
+        },
+        {
+            "srcNode": "SampleBss0",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_BAYER10",
+            "dstNode": "RawHdr0",
+            "dstPortId": 1,
+            "isDefer": 1,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "RawHdr0",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_BAYER10_UNPAK",
+            "dstNode": "Raw2Yuv3",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10_UNPAK"
+        },
+        {
+            "srcNode": "Raw2Raw0",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_BAYER10_UNPAK",
+            "dstNode": "AncRawSuperNight0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER10_UNPAK"
+        },
+        {
+            "srcNode": "SampleBss0",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_BAYER10",
+            "dstNode": "AncRawSuperNight0",
+            "dstPortId": 1,
+            "isDefer": 1,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "AncRawSuperNight0",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_BAYER12_UNPAK",
+            "dstNode": "Raw2Yuv3",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_BAYER12_UNPAK"
+        },
+        {
+            "srcNode": "SampleBss0",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_BAYER10",
+            "dstNode": "PreviewSelector0",
+            "dstPortId": 1,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "Raw2Yuv3",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_NV21",
+            "dstNode": "YuvAlgo2Jpeg0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_NV21"
+        },
+        {
+            "srcNode": "Raw2Yuv3",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_NV21",
+            "dstNode": "SatZoomFusion0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_NV21"
+        },
+        {
+            "srcNode": "Raw2Yuv0",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_NV21",
+            "dstNode": "YuvAlgo2Jpeg0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_NV21"
+        },
+        {
+            "srcNode": "Mfnr0",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_NV21",
+            "dstNode": "YuvAlgo2Jpeg0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_NV21"
+        },
+        {
+            "srcNode": "Mfnr0",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_NV21",
+            "dstNode": "SatZoomFusion0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_NV21"
+        },
+        {
+            "srcNode": "MfnrBss0",
+            "srcPortId": 1,
+            "srcFormat": "eImgFmt_BAYER10",
+            "isDefer": 1,
+            "dstNode": "Raw2Yuv1",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_NV21"
+        },
+        {
+            "srcNode": "MfnrBss0",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_BAYER10",
+            "dstNode": "PreviewSelector0",
+            "dstPortId": 1,
+            "dstFormat": "eImgFmt_BAYER10"
+        },
+        {
+            "srcNode": "PreviewSelector0",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_NV21",
+            "dstNode": "TranImageStyle1",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_NV21"
+        },
+        {
+            "srcNode": "TranImageStyle1",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_NV21",
+            "dstNode": "TranCaptureFilter1",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_NV21"
+        },
+        {
+            "srcNode": "Raw2Yuv2",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_NV21",
+            "dstNode": "SatZoomFusion0",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_NV21"
+        },
+        {
+            "srcNode": "TranCaptureFilter1",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_NV21",
+            "dstNode": "Yuv2Jpeg1",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_NV21"
+        },
+        {
+            "srcNode": "Raw2Yuv1",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_NV21",
+            "dstNode": "SatZoomFusion0",
+            "dstPortId": 1,
+            "dstFormat": "eImgFmt_NV21"
+        },
+        {
+            "srcNode": "SatZoomFusion0",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_NV21",
+            "dstNode": "YuvAlgo2Jpeg1",
+            "dstPortId": 0,
+            "dstFormat": "eImgFmt_NV21"
+        },
+        {
+            "srcNode": "YuvAlgo2Jpeg0",
+            "srcPortId": 1,
+            "srcFormat": "eImgFmt_BLOB",
+            "dstNode": "sinkbuffer",
+            "dstPortId": 1,
+            "dstFormat": "eImgFmt_BLOB"
+        },
+        {
+            "srcNode": "YuvAlgo2Jpeg1",
+            "srcPortId": 1,
+            "srcFormat": "eImgFmt_BLOB",
+            "dstNode": "sinkbuffer",
+            "dstPortId": 1,
+            "dstFormat": "eImgFmt_BLOB"
+        },
+        {
+            "srcNode": "Yuv2Jpeg1",
+            "srcPortId": 0,
+            "srcFormat": "eImgFmt_BLOB",
+            "isDefer": 1,
+            "dstNode": "sinkbuffer",
+            "dstPortId": 4,
+            "dstFormat": "eImgFmt_BLOB",
+            "dstQuickProcess": 1
+        },
+        {
+            "srcNode": "Yuv2Jpeg1",
+            "srcPortId": 1,
+            "srcFormat": "eImgFmt_NV21",
+            "isDefer": 1,
+            "dstNode": "sinkbuffer",
+            "dstPortId": 5,
+            "dstFormat": "eImgFmt_NV21",
+            "dstQuickProcess": 1
+        }
+    ],
+    "scenarioFeatureSet": [
+        {
+            "scenarioName": "normal",
+            "featureSets": [
+                {
+                    "featureCombinationName": "COMBINATION_MFNR_DualFusion",
+                    "keyFeature": "Mfnr0",
+                    "isSupportDefer": 1,
+                    "featureCombination": [
+                        "PostviewConvert0",
+                        "MfnrBss0",
+                        "PreviewSelector0",
+                        "Mfnr0",
+                        "Raw2Yuv1",
+                        "SatZoomFusion0",
+                        "TranImageStyle1",
+                        "TranCaptureFilter1",
+                        "Yuv2Jpeg1",
+                        "YuvAlgo2Jpeg1"
+                    ],
+                    "inputFeatures": [
+                        "MfnrBss0",
+                        "PreviewSelector0"
+                    ]
+                },
+                {
+                    "featureCombinationName": "COMBINATION_Single_DualFusion",
+                    "keyFeature": "Raw2Yuv2",
+                    "isSupportDefer": 1,
+                    "featureCombination": [
+                        "PostviewConvert0",
+                        "PreviewSelector0",
+                        "Raw2Yuv2",
+                        "Raw2Yuv1",
+                        "SatZoomFusion0",
+                        "TranImageStyle1",
+                        "TranCaptureFilter1",
+                        "Yuv2Jpeg1",
+                        "YuvAlgo2Jpeg1"
+                    ],
+                    "inputFeatures": [
+                        "Raw2Yuv2",
+                        "Raw2Yuv1",
+                        "PreviewSelector0"
+                    ]
+                },
+                {
+                    "featureCombinationName": "COMBINATION_RawHdr",
+                    "keyFeature": "RawHdr0",
+                    "isSupportDefer": 1,
+                    "featureCombination": [
+                        "PostviewConvert0",
+                        "PreviewSelector0",
+                        "SampleBss0",
+                        "Raw2Raw0",
+                        "RawHdr0",
+                        "TranImageStyle1",
+                        "TranCaptureFilter1",
+                        "Yuv2Jpeg1",
+                        "Raw2Yuv3",
+                        "YuvAlgo2Jpeg0"
+                    ],
+                    "inputFeatures": [
+                        "Raw2Raw0",
+                        "PreviewSelector0"
+                    ]
+                },
+                {
+                    "featureCombinationName": "COMBINATION_AncRawSuperNight",
+                    "keyFeature": "AncRawSuperNight0",
+                    "isSupportDefer": 1,
+                    "featureCombination": [
+                        "PostviewConvert0",
+                        "PreviewSelector0",
+                        "SampleBss0",
+                        "Raw2Raw0",
+                        "AncRawSuperNight0",
+                        "TranImageStyle1",
+                        "TranCaptureFilter1",
+                        "Yuv2Jpeg1",
+                        "Raw2Yuv3",
+                        "YuvAlgo2Jpeg0"
+                    ],
+                    "inputFeatures": [
+                        "Raw2Raw0",
+                        "PreviewSelector0"
+                    ]
+                },
+                {
+                    "featureCombinationName": "COMBINATION_TranStRawSr",
+                    "keyFeature": "TranStRawSr0",
+                    "isSupportDefer": 1,
+                    "featureCombination": [
+                        "PostviewConvert0",
+                        "PreviewSelector0",
+                        "SampleBss0",
+                        "Raw2Raw0",
+                        "TranStRawSr0",
+                        "TranImageStyle1",
+                        "TranCaptureFilter1",
+                        "Yuv2Jpeg1",
+                        "Raw2Yuv3",
+                        "YuvAlgo2Jpeg0"
+                    ],
+                    "inputFeatures": [
+                        "Raw2Raw0",
+                        "PreviewSelector0"
+                    ]
+                },
+                {
+                    "featureCombinationName": "COMBINATION_MFNR",
+                    "keyFeature": "Mfnr0",
+                    "isSupportDefer": 1,
+                    "featureCombination": [
+                        "PostviewConvert0",
+                        "MfnrBss0",
+                        "PreviewSelector0",
+                        "Mfnr0",
+                        "TranImageStyle1",
+                        "TranCaptureFilter1",
+                        "Yuv2Jpeg1",
+                        "YuvAlgo2Jpeg0"
+                    ],
+                    "inputFeatures": [
+                        "Mfnr0",
+                        "PreviewSelector0"
+                    ]
+                },
+                {
+                    "featureCombinationName": "COMBINATION_SINGLE",
+                    "keyFeature": "Raw2Yuv0",
+                    "isSupportDefer": 1,
+                    "featureCombination": [
+                        "PostviewConvert0",
+                        "Raw2Yuv0",
+                        "PreviewSelector0",
+                        "TranImageStyle1",
+                        "TranCaptureFilter1",
+                        "Yuv2Jpeg1",
+                        "YuvAlgo2Jpeg0"
+                    ],
+                    "inputFeatures": [
+                        "Raw2Yuv0",
+                        "PreviewSelector0"
+                    ]
+                }
+            ]
+        }
+    ]
+}

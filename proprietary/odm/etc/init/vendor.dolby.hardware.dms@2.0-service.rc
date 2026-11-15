@@ -1,0 +1,9 @@
+#USD: add Dolby Atmos Support by ming.hou 20250707 start
+#service dms-hal-2-0 /vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
+service dms-hal-2-0 /odm/bin/hw/vendor.dolby.hardware.dms@2.0-service
+#USD: add Dolby Atmos Support by ming.hou 20250707 end
+    class hal
+    user media
+    group audio media
+on post-fs-data
+    mkdir /data/vendor/dolby 0770 media media

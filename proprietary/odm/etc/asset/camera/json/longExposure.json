@@ -1,0 +1,403 @@
+{
+    "default_values": {
+        "shutter": 100,
+        "iso": 100
+    },
+    "bv_threshold": 35,
+    "tables": [
+        {
+            "table_name": "StarTable",
+            "rules": [
+                {
+                    "bv_range": [-150, -100],
+                    "conditions": [
+                        {"bt_y_range": [180, 10000], "shutter": 5000, "iso": 200},
+                        {"bt_y_range": [100, 180], "shutter": 10000, "iso": 400},
+                        {"bt_y_range": [60, 100], "shutter": 10000, "iso": 800},
+                        {"bt_y_range": [-10000, 60], "shutter": 10000, "iso": 1600}
+                    ]
+                },
+                {
+                    "bv_range": [-100, -80],
+                    "conditions": [
+                        {"bt_y_range": [400, 10000], "shutter": 200, "iso": 100},
+                        {"bt_y_range": [200, 400], "shutter": 600, "iso": 100},
+                        {"bt_y_range": [100, 200], "shutter": 1250, "iso": 100},
+                        {"bt_y_range": [60, 100], "shutter": 2500, "iso": 200},
+                        {"bt_y_range": [-10000, 60], "shutter": 2500, "iso": 150}
+                    ]
+                },
+                {
+                    "bv_range": [-80, 0],
+                    "conditions": [
+                        {"bt_y_range": [1500, 10000], "shutter": 100, "iso": 50},
+                        {"bt_y_range": [500, 1500], "shutter": 150, "iso": 50},
+                        {"bt_y_range": [100, 500], "shutter": 200, "iso": 50},
+                        {"bt_y_range": [-10000, 100], "shutter": 300, "iso": 50}
+                    ]
+                },
+                {
+                    "bv_range": [0, 30],
+                    "shutter": 50,
+                    "iso": 50
+                },
+                {
+                    "bv_range": [30, 60],
+                    "shutter": 20,
+                    "iso": 50
+                },
+                {
+                    "bv_range": [60, 10000],
+                    "shutter": 10,
+                    "iso": 50
+                }
+            ]
+        },
+        {
+            "table_name": "TrafficTable",
+            "rules": [
+                {
+                    "bv_range": [-10000, -100],
+                    "shutter": 100,
+                    "iso": 2000
+                },
+                {
+                    "bv_range": [-100, -80],
+                    "shutter": 100,
+                    "iso": 800
+                },
+                {
+                    "bv_range": [-80, -60],
+                    "shutter": 100,
+                    "iso": 400
+                },
+                {
+                    "bv_range": [-60, -30],
+                    "conditions": [
+                        {
+                            "bt_y_threshold": 2300,
+                            "dt_y_ranges": [
+                                {"dt_y_range": [0, 30], "shutter": 100, "iso": 400},
+                                {"dt_y_range": [30, 60], "shutter": 100, "iso": 350},
+                                {"dt_y_range": [60, 90], "shutter": 100, "iso": 300},
+                                {"dt_y_range": [90, 120], "shutter": 100, "iso": 250},
+                                {"dt_y_range": [120, 150], "shutter": 100, "iso": 200},
+                                {"dt_y_range": [150, 180], "shutter": 100, "iso": 150},
+                                {"dt_y_range": [180, 10000], "shutter": 100, "iso": 100}
+                            ]
+                        },
+                        {
+                            "bt_y_threshold": null,
+                            "dt_y_ranges": [
+                                {"dt_y_range": [0, 60], "shutter": 100, "iso": 200},
+                                {"dt_y_range": [60, 120], "shutter": 100, "iso": 150},
+                                {"dt_y_range": [120, 180], "shutter": 100, "iso": 100},
+                                {"dt_y_range": [180, 10000], "shutter": 100, "iso": 50}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bv_range": [-30, 0],
+                    "conditions": [
+                        {
+                            "bt_y_threshold": 2300,
+                            "dt_y_ranges": [
+                                {"dt_y_range": [0, 5], "shutter": 100, "iso": 300},
+                                {"dt_y_range": [5, 10], "shutter": 100, "iso": 250},
+                                {"dt_y_range": [10, 15], "shutter": 100, "iso": 200},
+                                {"dt_y_range": [15, 25], "shutter": 100, "iso": 150},
+                                {"dt_y_range": [25, 180], "shutter": 100, "iso": 100},
+                                {"dt_y_range": [180, 10000], "shutter": 100, "iso": 50}
+                            ]
+                        },
+                        {
+                            "bt_y_threshold": null,
+                            "dt_y_ranges": [
+                                {"dt_y_range": [0, 30], "shutter": 100, "iso": 200},
+                                {"dt_y_range": [30, 120], "shutter": 100, "iso": 150},
+                                {"dt_y_range": [120, 180], "shutter": 100, "iso": 100},
+                                {"dt_y_range": [180, 10000], "shutter": 100, "iso": 50}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bv_range": [0, 10000],
+                    "shutter": 100,
+                    "iso": 50
+                }
+            ]
+        },
+        {
+            "table_name": "LightTable",
+            "rules": [
+                {
+                    "bv_range": [-10000, -100],
+                    "dt_y_ranges": [
+                        {"dt_y_range": [0, 10], "shutter": 100, "iso": 500},
+                        {"dt_y_range": [10, 30], "shutter": 100, "iso": 450},
+                        {"dt_y_range": [30, 100], "shutter": 100, "iso": 400},
+                        {"dt_y_range": [100, 160], "shutter": 100, "iso": 350},
+                        {"dt_y_range": [160, 10000], "shutter": 100, "iso": 300}
+                    ]
+                },
+                {
+                    "bv_range": [-100, -80],
+                    "dt_y_ranges": [
+                        {"dt_y_range": [0, 10], "shutter": 100, "iso": 400},
+                        {"dt_y_range": [10, 30], "shutter": 100, "iso": 350},
+                        {"dt_y_range": [30, 90], "shutter": 100, "iso": 300},
+                        {"dt_y_range": [90, 150], "shutter": 100, "iso": 250},
+                        {"dt_y_range": [150, 10000], "shutter": 100, "iso": 200}
+                    ]
+                },
+                {
+                    "bv_range": [-80, -60],
+                    "dt_y_ranges": [
+                        {"dt_y_range": [0, 10], "shutter": 100, "iso": 350},
+                        {"dt_y_range": [10, 30], "shutter": 100, "iso": 300},
+                        {"dt_y_range": [30, 100], "shutter": 100, "iso": 250},
+                        {"dt_y_range": [100, 180], "shutter": 100, "iso": 200},
+                        {"dt_y_range": [180, 10000], "shutter": 100, "iso": 150}
+                    ]
+                },
+                {
+                    "bv_range": [-60, -40],
+                    "dt_y_ranges": [
+                        {"dt_y_range": [0, 10], "shutter": 100, "iso": 300},
+                        {"dt_y_range": [10, 30], "shutter": 100, "iso": 250},
+                        {"dt_y_range": [30, 100], "shutter": 100, "iso": 200},
+                        {"dt_y_range": [100, 10000], "shutter": 100, "iso": 150}
+                    ]
+                },
+                {
+                    "bv_range": [-40, -10],
+                    "conditions": [
+                        {
+                            "bt_y_threshold": 2200,
+                            "dt_y_ranges": [
+                                {"dt_y_range": [0, 60], "shutter": 100, "iso": 200},
+                                {"dt_y_range": [60, 180], "shutter": 100, "iso": 150},
+                                {"dt_y_range": [180, 10000], "shutter": 100, "iso": 100}
+                            ]
+                        },
+                        {
+                            "bt_y_threshold": null,
+                            "dt_y_ranges": [
+                                {"dt_y_range": [0, 10000], "shutter": 100, "iso": 150}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bv_range": [-10, 20],
+                    "shutter": 100,
+                    "iso": 100
+                },
+                {
+                    "bv_range": [20, 10000],
+                    "shutter": 100,
+                    "iso": 50
+                }
+            ]
+        },
+        {
+            "table_name": "TLStarTable",
+            "rules": [
+                {
+                    "bv_range": [-150, -100],
+                    "conditions": [
+                        {"bt_y_range": [180, 10000], "shutter": 10000, "iso": 200},
+                        {"bt_y_range": [100, 180], "shutter": 15000, "iso": 400},
+                        {"bt_y_range": [60, 100], "shutter": 15000, "iso": 800},
+                        {"bt_y_range": [-10000, 60], "shutter": 15000, "iso": 1600}
+                    ]
+                },
+                {
+                    "bv_range": [-100, -60],
+                    "conditions": [
+                        {"bt_y_range": [400, 10000], "shutter": 2000, "iso": 100},
+                        {"bt_y_range": [200, 400], "shutter": 2500, "iso": 100},
+                        {"bt_y_range": [100, 200], "shutter": 5000, "iso": 100},
+                        {"bt_y_range": [60, 100], "shutter": 5000, "iso": 200},
+                        {"bt_y_range": [-10000, 60], "shutter": 10000, "iso": 150}
+                    ]
+                },
+                {
+                    "bv_range": [-60, 0],
+                    "conditions": [
+                        {"bt_y_range": [1000, 10000], "shutter": 150, "iso": 50},
+                        {"bt_y_range": [500, 1000], "shutter": 400, "iso": 50},
+                        {"bt_y_range": [100, 500], "shutter": 500, "iso": 100},
+                        {"bt_y_range": [-10000, 100], "shutter": 1000, "iso": 100}
+                    ]
+                },
+                {
+                    "bv_range": [0, 30],
+                    "shutter": 100,
+                    "iso": 100
+                },
+                {
+                    "bv_range": [30, 60],
+                    "shutter": 20,
+                    "iso": 100
+                },
+                {
+                    "bv_range": [60, 10000],
+                    "shutter": 10,
+                    "iso": 100
+                }
+            ]
+        },
+        {
+            "table_name": "TLTrafficTable",
+            "rules": [
+                {
+                    "bv_range": [-10000, -100],
+                    "shutter": 100,
+                    "iso": 2000
+                },
+                {
+                    "bv_range": [-100, -80],
+                    "shutter": 100,
+                    "iso": 800
+                },
+                {
+                    "bv_range": [-80, -60],
+                    "shutter": 100,
+                    "iso": 400
+                },
+                {
+                    "bv_range": [-60, -30],
+                    "conditions": [
+                        {
+                            "bt_y_threshold": 2300,
+                            "dt_y_ranges": [
+                                {"dt_y_range": [0, 30], "shutter": 100, "iso": 400},
+                                {"dt_y_range": [30, 60], "shutter": 100, "iso": 350},
+                                {"dt_y_range": [60, 90], "shutter": 100, "iso": 300},
+                                {"dt_y_range": [90, 120], "shutter": 100, "iso": 250},
+                                {"dt_y_range": [120, 150], "shutter": 100, "iso": 200},
+                                {"dt_y_range": [150, 180], "shutter": 100, "iso": 150},
+                                {"dt_y_range": [180, 10000], "shutter": 100, "iso": 100}
+                            ]
+                        },
+                        {
+                            "bt_y_threshold": null,
+                            "dt_y_ranges": [
+                                {"dt_y_range": [0, 60], "shutter": 100, "iso": 200},
+                                {"dt_y_range": [60, 120], "shutter": 100, "iso": 150},
+                                {"dt_y_range": [120, 180], "shutter": 100, "iso": 100},
+                                {"dt_y_range": [180, 10000], "shutter": 100, "iso": 50}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bv_range": [-30, 0],
+                    "conditions": [
+                        {
+                            "bt_y_threshold": 2300,
+                            "dt_y_ranges": [
+                                {"dt_y_range": [0, 5], "shutter": 100, "iso": 300},
+                                {"dt_y_range": [5, 10], "shutter": 100, "iso": 250},
+                                {"dt_y_range": [10, 15], "shutter": 100, "iso": 200},
+                                {"dt_y_range": [15, 25], "shutter": 100, "iso": 150},
+                                {"dt_y_range": [25, 180], "shutter": 100, "iso": 100},
+                                {"dt_y_range": [180, 10000], "shutter": 100, "iso": 50}
+                            ]
+                        },
+                        {
+                            "bt_y_threshold": null,
+                            "dt_y_ranges": [
+                                {"dt_y_range": [0, 30], "shutter": 100, "iso": 200},
+                                {"dt_y_range": [30, 120], "shutter": 100, "iso": 150},
+                                {"dt_y_range": [120, 180], "shutter": 100, "iso": 100},
+                                {"dt_y_range": [180, 10000], "shutter": 100, "iso": 50}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "bv_range": [0, 10000],
+                    "shutter": 100,
+                    "iso": 50
+                }
+            ]
+        },
+        {
+    "table_name": "TLLightTable",
+    "rules": [
+        {
+            "bv_range": [-10000, -100],
+            "dt_y_ranges": [
+                {"dt_y_range": [0, 10], "shutter": 100, "iso": 500},
+                {"dt_y_range": [10, 30], "shutter": 100, "iso": 450},
+                {"dt_y_range": [30, 100], "shutter": 100, "iso": 400},
+                {"dt_y_range": [100, 160], "shutter": 100, "iso": 350},
+                {"dt_y_range": [160, 10000], "shutter": 100, "iso": 300}
+            ]
+        },
+        {
+            "bv_range": [-100, -80],
+            "dt_y_ranges": [
+                {"dt_y_range": [0, 10], "shutter": 100, "iso": 400},
+                {"dt_y_range": [10, 30], "shutter": 100, "iso": 350},
+                {"dt_y_range": [30, 90], "shutter": 100, "iso": 300},
+                {"dt_y_range": [90, 150], "shutter": 100, "iso": 250},
+                {"dt_y_range": [150, 10000], "shutter": 100, "iso": 200}
+            ]
+        },
+        {
+            "bv_range": [-80, -60],
+            "dt_y_ranges": [
+                {"dt_y_range": [0, 10], "shutter": 100, "iso": 350},
+                {"dt_y_range": [10, 30], "shutter": 100, "iso": 300},
+                {"dt_y_range": [30, 100], "shutter": 100, "iso": 250},
+                {"dt_y_range": [100, 180], "shutter": 100, "iso": 200},
+                {"dt_y_range": [180, 10000], "shutter": 100, "iso": 150}
+            ]
+        },
+        {
+            "bv_range": [-60, -40],
+            "dt_y_ranges": [
+                {"dt_y_range": [0, 10], "shutter": 100, "iso": 300},
+                {"dt_y_range": [10, 30], "shutter": 100, "iso": 250},
+                {"dt_y_range": [30, 100], "shutter": 100, "iso": 200},
+                {"dt_y_range": [100, 10000], "shutter": 100, "iso": 150}
+            ]
+        },
+        {
+            "bv_range": [-40, -10],
+            "conditions": [
+                {
+                    "bt_y_threshold": 2200,
+                    "dt_y_ranges": [
+                        {"dt_y_range": [0, 60], "shutter": 100, "iso": 200},
+                        {"dt_y_range": [60, 180], "shutter": 100, "iso": 150},
+                        {"dt_y_range": [180, 10000], "shutter": 100, "iso": 100}
+                    ]
+                },
+                {
+                    "bt_y_threshold": null,
+                    "shutter": 100,
+                    "iso": 150
+                }
+            ]
+        },
+        {
+            "bv_range": [-10, 20],
+            "shutter": 100,
+            "iso": 100
+        },
+        {
+            "bv_range": [20, 10000],
+            "shutter": 100,
+            "iso": 50
+        }
+    ]
+        }
+
+    ]
+}

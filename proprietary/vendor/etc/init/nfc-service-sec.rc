@@ -1,0 +1,17 @@
+on post-fs
+    insmod /odm/lib/modules/sec_nfc.ko
+
+on boot
+    # Create NFC data directories
+    mkdir /data/vendor/nfc 0770 nfc nfc
+    mkdir /data/vendor/nfc/param 0770 nfc nfc
+
+    # Device node permissions (0660 for security best practice)
+    chown nfc nfc /dev/sec-nfc
+    chmod 0660 /dev/sec-nfc
+
+service nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service.sec
+    class hal
+    user nfc
+    group nfc
+    disabled

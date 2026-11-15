@@ -1,0 +1,52 @@
+{
+    "Platform": "LJ9",
+    "Version": "0.0.1",
+
+    "Alpha": 0.8,
+    "StartFreq": 21000,
+    "EndFreq": 23000,
+    "CrossCorrThre": 0.3,
+    "StatePeaks": 40,
+    "QuitThres": 0.35,
+    "Gains": {
+
+        "Channel_1": 4,
+        "Channel_2": -8
+    },
+
+    "TouchThresholds": {
+
+        "Touch_thr_1": 0.04,
+        "Touch_thr_2": 0.5
+    },
+
+    "EnergyMax": {
+
+        "Energy_max_1": 1.5,
+        "Energy_max_2": 1.5
+    },
+
+    "EnergyInit": {
+
+        "Energy_init_1": 0.1,
+        "Energy_init_2": 0.5
+    },
+
+    "OptimizedParams": {
+
+        "EnergyRatioThreshold": 4.5,
+        "EnergyRatioQuitThreshold": 3.5,
+
+        "EnterCountThreshold": 10,
+        "ExitCountThreshold": 20,
+
+        "VarianceThreshold": 0.08,
+        "VarianceBufferSize": 30,
+
+        "ScoreThreshold": 0.61,
+        "ScoreQuitThreshold": 0.45,
+
+        "UseSoftBottomConstraint": true
+    }
+
+}

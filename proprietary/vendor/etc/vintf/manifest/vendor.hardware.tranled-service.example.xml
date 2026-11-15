@@ -1,0 +1,10 @@
+<manifest version="1.0" type="device">  
+    <hal format="aidl">  
+        <name>vendor.hardware.tranled</name>  
+        <version>1</version>  
+        <interface>  
+            <name>ITranLed</name>  
+            <instance>default</instance>  
+        </interface>  
+    </hal>  
+</manifest>  

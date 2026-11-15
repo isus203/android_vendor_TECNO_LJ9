@@ -1,0 +1,10 @@
+{
+  "featureConfig": {
+    "tranfac.sensor.fingerprint.optical": "",
+    "tranfac.sensor.fingerprint.tran_common_tee": ""
+  },
+  "featureForce": {
+  },
+  "featureExclude": {
+  }
+}

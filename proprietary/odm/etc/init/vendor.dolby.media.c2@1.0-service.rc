@@ -1,0 +1,10 @@
+#USD: add Dolby Atmos Support by ming.hou 20250707 start
+#service vendor-dolby-media-c2-hal-1-0 /vendor/bin/hw/vendor.dolby.media.c2-default-service-dax
+service vendor-dolby-media-c2-hal-1-0 /odm/bin/hw/vendor.dolby.media.c2-default-service-dax
+#USD: add Dolby Atmos Support by ming.hou 20250707 end
+    class hal
+    user mediacodec
+    group camera mediadrm drmrpc
+    ioprio rt 4
+    writepid /dev/cpuset/foreground/tasks
+

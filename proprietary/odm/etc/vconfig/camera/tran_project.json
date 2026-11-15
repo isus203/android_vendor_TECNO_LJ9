@@ -1,0 +1,14 @@
+{
+  "maxPostviewWidth": 560,
+  "tzSupportModes": [0,10,16,17,13],
+  "defaultAvailMemForshot": 300,
+  "memAvailMap": {},
+  "defaultMaxInflight": 11,
+  "maxInflightMap": {},
+  "KDisableCaptureHint": false,
+  "graphJsonMap": {
+    "0": "SingleCapture.json",
+    "3": "BackZoomCapture.json"
+  },
+  "deviceGraphJsonMap": {}
+}

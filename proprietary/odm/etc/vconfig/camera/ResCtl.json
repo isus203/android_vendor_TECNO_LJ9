@@ -1,0 +1,31 @@
+{
+    "ResCtl": [
+        {
+            "graphName": "tzcommon",
+            "policys": [
+                {
+                    "nodeName": "default",
+                    "pluginPolicy": "default",
+                    "perfmode": "high_perf_mode",
+                    "policy": {
+                        "PERF_RES_CPUFREQ_MIN_CLUSTER_0": 2000000,
+                        "PERF_RES_CPUFREQ_MIN_CLUSTER_1": 2500000,
+                        "PERF_RES_SCHED_PREFER_IDLE_TA": 1,
+                        "PERF_RES_SCHED_PREFER_IDLE_FG": 1,
+                        "PERF_RES_GPU_FREQ_MIN": 10
+                    }
+                },
+                {
+                    "nodeName": "default",
+                    "pluginPolicy": "default",
+                    "perfmode": "low_perf_mode",
+                    "policy": {
+                        "PERF_RES_CPUFREQ_MIN_CLUSTER_0": 2000000,
+                        "PERF_RES_CPUFREQ_MIN_CLUSTER_1": 2500000,
+                        "PERF_RES_GPU_FREQ_MIN": 10
+                    }
+                }
+            ]
+        }
+    ]
+}

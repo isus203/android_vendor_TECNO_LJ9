@@ -1,0 +1,9 @@
+service vendor.trancamserver /vendor/bin/hw/vendor.transsion.hardware.trancam.trancamserver@1.0-service
+    class early_hal
+    user system
+    group system
+    disabled
+
+on property:ro.vendor.cam_transerver_support=true
+    start vendor.trancamserver
+

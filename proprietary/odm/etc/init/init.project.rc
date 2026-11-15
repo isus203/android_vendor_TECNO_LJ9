@@ -1,0 +1,4 @@
+on init
+#[ITD] set mlock memory limit 62M for camera. zhiben.zou@transsion.com, 2024-12-8, start.
+    setrlimit 8 65536000 65536000
+#[ITD] set mlock memory limit 62M for camera. zhiben.zou@transsion.com, 2024-12-8, end.

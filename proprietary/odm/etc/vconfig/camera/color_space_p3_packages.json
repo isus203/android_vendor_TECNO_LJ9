@@ -1,0 +1,17 @@
+{
+  "packages": [
+    "com.transsion.camera",
+    "com.facebook.katana",
+    "com.facebook.lite",
+    "com.whatsapp.w4b",
+    "com.whatsapp",
+    "com.snapchat.android",
+    "org.telegram.messenger",
+    "com.twitter.android",
+    "com.google.android.youtube",
+    "com.linecorp.b612.android",
+    "com.ss.android.ugc.tiktok.lite",
+    "com.facebook.orca"
+  ]
+}
+

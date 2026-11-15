@@ -1,0 +1,4 @@
+service vendor.file.service /vendor/bin/hw/vendor.file.access@1.0-service
+    class hal
+    user system
+    group system

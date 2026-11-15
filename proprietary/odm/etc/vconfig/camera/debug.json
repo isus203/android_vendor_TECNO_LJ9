@@ -1,0 +1,19 @@
+{
+    "PropertyMap_int32_t": {
+        "vendor.debug.camera.tranzone.TZAlgoEngine.loglevel": 1,
+        "vendor.debug.camera.tranzone.TZJsonUtil.loglevel": 1,
+        "vendor.debug.camera.tranzone.TZGraph.loglevel": 1,
+        "vendor.debug.camera.tranzone.TZPathEngine.loglevel": 1,
+        "vendor.debug.camera.tranzone.TZDecision.loglevel": 1,
+        "vendor.debug.camera.tranzone.TZPipeline.loglevel": 1,
+        "vendor.debug.camera.tranzone.TZPipeline.perfLogEnable": 1,
+        "vendor.debug.camera.tranzone.TZPipeline.DebugFailAssert": 1,
+        "vendor.debug.camera.tranzone.TZNode.loglevel": 1,
+        "vendor.debug.camera.tranzone.TZDebugProperty.loglevel": 0,
+        "vendor.debug.camera.tranzone.TZThreadPool.loglevel": 1,
+        "vendor.debug.camera.tranzone.TZCommon.loglevel": 1,
+        "vendor.debug.camera.tranzone.corefeaturesession.zsl": 0,
+        "vendor.debug.camera.tranzone.MTKResCtrl.loglevel": 0,
+        "vendor.debug.camera.tranzone.TZResCtrl.loglevel": 0
+    }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TuningMap>
+  <SensorsInfo>
+    <SensorInfo>
+      <sensorId>0</sensorId>
+      <sensorName>imx890</sensorName>
+    </SensorInfo>
+  </SensorsInfo>
+
+  <!--
+    PipeMask :
+    SNVPIPE   = 0x10
+  -->
+  <TuningMapInfo>
+    <sensorName>imx890</sensorName>
+    <AiIspMode value="1">
+      <SensorIndex>0</SensorIndex>
+    </AiIspMode>
+  </TuningMapInfo>
+
+</TuningMap>

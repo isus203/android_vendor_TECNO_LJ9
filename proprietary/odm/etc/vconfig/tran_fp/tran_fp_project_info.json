@@ -1,0 +1,21 @@
+{
+    "checksum"         :83904593,
+    "tran_project_name":"LJ9",
+    "tran_project_id"  :1,
+    "tran_fp_spi_num"  :1,
+    "tran_fp_type"     :"UNDER_DISPLAY_OPTICAL",
+    "vendors_in_total" :1,
+    "tran_vendor1"     :"GOODIX_GW9598",
+    "tran_vendor2"     :"NN",
+    "tran_vendor3"     :"NN",
+    "tran_vendor4"     :"NN",
+    "tran_fp_display_module_name1":"boe",
+    "tran_fp_display_module_name2":"NN",
+    "tran_fp_display_ic_name1":"rm692j0",
+    "tran_fp_offset_x1"     :"630",
+    "tran_fp_offset_y1"     :"2537",
+    "tran_fp_display_ic_name2":"NN",
+    "tran_fp_offset_x2"     :"NN",
+    "tran_fp_offset_y2"     :"NN",
+    "tran_fp_load_ta_from_odm_path":1
+}

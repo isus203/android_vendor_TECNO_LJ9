@@ -1,0 +1,9 @@
+service vendor.face-default /vendor/bin/hw/android.hardware.biometrics.face-service
+    class hal
+    user system
+    group system
+    task_profiles ProcessCapacityHigh
+    capabilities SYS_NICE
+    rlimit rtprio 10 10
+
+
